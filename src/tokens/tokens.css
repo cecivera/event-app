@@ -1,0 +1,33 @@
+/*
+ * Design tokens for Event App (white-label).
+ * Names match the Figma variables (prefix --ss-), so Dev Mode and code speak the same language.
+ *
+ * Base tokens are shared by every brand/theme.
+ * Only the accent tokens change per theme: set data-theme on any ancestor.
+ *   <div data-theme="stan-smith"> ... </div>
+ *   <div data-theme="default"> ... </div>   (also the fallback when no theme is set)
+ */
+
+:root,
+[data-theme="default"] {
+  /* Surface and text (shared) */
+  --ss-color-surface-muted: #f5f5e5;
+  --ss-color-text-primary: #000000;
+  --ss-color-text-secondary: #767677;
+  --ss-color-border-default: #cdcdcd;
+
+  /* Spacing (shared) */
+  --ss-spacing-xs: 4px;
+  --ss-spacing-md: 16px;
+  --ss-spacing-xl: 32px;
+  --ss-padding-md: 16px;
+
+  /* Theme: Default */
+  --ss-color-accent: #000000;
+  --ss-color-accent-strong: #000000;
+}
+
+[data-theme="stan-smith"] {
+  --ss-color-accent: #00aa55;
+  --ss-color-accent-strong: #0a5128;
+}

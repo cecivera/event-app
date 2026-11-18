@@ -1,0 +1,36 @@
+/*
+ * Typography tokens. Fonts are loaded by the app (next/font) or Storybook (preview-head.html)
+ * and exposed through these two variables.
+ */
+:root {
+  --ss-font-body: "Barlow", system-ui, sans-serif;
+  --ss-font-headline: "Barlow Condensed", "Barlow", system-ui, sans-serif;
+}
+
+/* body/body-s */
+.ss-text-body-s {
+  font-family: var(--ss-font-body);
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 20px;
+  letter-spacing: 0;
+}
+
+/* body/body-xs */
+.ss-text-body-xs {
+  font-family: var(--ss-font-body);
+  font-weight: 400;
+  font-size: 12px;
+  line-height: 20px;
+  letter-spacing: 0;
+}
+
+/* headline/headline-s-desktop */
+.ss-text-headline-s {
+  font-family: var(--ss-font-headline);
+  font-weight: 700;
+  font-size: 24px;
+  line-height: 28px;
+  letter-spacing: 2.5px;
+  text-transform: uppercase;
+}

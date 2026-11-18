@@ -1,0 +1,27 @@
+{
+  "name": "event-app",
+  "version": "0.1.0",
+  "private": true,
+  "description": "Event App (white-label, adiClub): component library and prototype for dev handoff",
+  "scripts": {
+    "dev": "next dev",
+    "build": "next build",
+    "start": "next start",
+    "typecheck": "tsc --noEmit",
+    "storybook": "storybook dev -p 6006",
+    "build-storybook": "storybook build"
+  },
+  "dependencies": {
+    "next": "^15.5.0",
+    "react": "^19.0.0",
+    "react-dom": "^19.0.0"
+  },
+  "devDependencies": {
+    "@storybook/nextjs-vite": "^9.1.0",
+    "@types/node": "^22.0.0",
+    "@types/react": "^19.0.0",
+    "@types/react-dom": "^19.0.0",
+    "storybook": "^9.1.0",
+    "typescript": "^5.6.0"
+  }
+}
