@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import "../tokens/tokens.css";
 import "../tokens/typography.css";
+import "../tokens/adl.css";
 
 export const metadata: Metadata = {
   title: "Event App",

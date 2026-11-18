@@ -50,32 +50,3 @@
   margin: 0;
   color: var(--ss-color-text-secondary);
 }
-
-.cta {
-  box-sizing: border-box;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  width: 100%;
-  padding: var(--ss-spacing-md) var(--ss-padding-md);
-  border: 0;
-  border-radius: 0;
-  background: var(--ss-color-text-primary);
-  color: var(--ss-color-surface);
-  cursor: pointer;
-  text-align: left;
-  text-decoration: none;
-}
-
-.cta:hover {
-  opacity: 0.88;
-}
-
-.cta:focus-visible {
-  outline: 2px solid var(--ss-color-accent);
-  outline-offset: 2px;
-}
-
-.arrow {
-  font-weight: 700;
-}

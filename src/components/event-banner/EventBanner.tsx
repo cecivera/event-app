@@ -1,5 +1,6 @@
 "use client";
 
+import { Button } from "../button";
 import styles from "./EventBanner.module.css";
 
 export type EventBannerProps = {
@@ -36,15 +37,6 @@ export function EventBanner({
   wordmark = "STAN SMITH",
   className,
 }: EventBannerProps) {
-  const cta = (
-    <>
-      <span className="ss-text-body-m-bold">{ctaLabel}</span>
-      <span className={`${styles.arrow} ss-text-body-m-bold`} aria-hidden="true">
-        →
-      </span>
-    </>
-  );
-
   return (
     <article className={[styles.banner, className].filter(Boolean).join(" ")}>
       <div className={styles.image}>
@@ -58,15 +50,9 @@ export function EventBanner({
       <div className={styles.body}>
         <h2 className={`${styles.title} ss-text-headline-s-mobile`}>{title}</h2>
         <p className={`${styles.description} ss-text-body-s`}>{description}</p>
-        {ctaHref ? (
-          <a className={styles.cta} href={ctaHref}>
-            {cta}
-          </a>
-        ) : (
-          <button type="button" className={styles.cta} onClick={onCtaClick}>
-            {cta}
-          </button>
-        )}
+        <Button fullWidth href={ctaHref} onClick={onCtaClick}>
+          {ctaLabel}
+        </Button>
       </div>
     </article>
   );

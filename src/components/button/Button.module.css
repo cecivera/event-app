@@ -1,0 +1,142 @@
+.button {
+  box-sizing: border-box;
+  display: inline-flex;
+  align-items: center;
+  gap: var(--adl-spacing-icon-to-text);
+  min-height: 48px;
+  min-width: 80px;
+  height: 48px;
+  padding: 0 var(--adl-spacing-s);
+  border: var(--adl-borderwidth-fixed-1) solid transparent;
+  border-radius: 0;
+  font-family: var(--ss-font-body);
+  font-weight: 700;
+  font-size: 16px;
+  line-height: 24px;
+  text-align: left;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+.button:focus-visible {
+  outline: 2px solid var(--adl-border-primary);
+  outline-offset: 2px;
+}
+
+.fullWidth {
+  display: flex;
+  width: 100%;
+}
+
+.label {
+  flex: 1 0 auto;
+}
+
+.icon {
+  flex-shrink: 0;
+}
+
+/* Primary */
+.primary {
+  background: var(--adl-fill-primary);
+  border-color: var(--adl-fill-primary);
+  color: var(--adl-text-primary-inverse);
+}
+.primary:hover {
+  background: var(--adl-fill-hover-inverse);
+  border-color: var(--adl-fill-hover-inverse);
+}
+.primary.onDark {
+  background: var(--adl-fill-primary-inverse);
+  border-color: var(--adl-fill-primary-inverse);
+  color: var(--adl-text-primary);
+}
+.primary.onDark:hover {
+  background: var(--adl-fill-hover);
+  border-color: var(--adl-fill-hover);
+}
+
+/* Secondary */
+.secondary {
+  background: var(--adl-fill-primary-inverse);
+  border-color: var(--adl-border-primary);
+  color: var(--adl-text-primary);
+}
+.secondary:hover {
+  background: var(--adl-fill-hover);
+  border-color: var(--adl-border-hover);
+}
+.secondary.onDark {
+  background: var(--adl-fill-primary);
+  border-color: var(--adl-border-primary-inverse);
+  color: var(--adl-text-primary-inverse);
+}
+.secondary.onDark:hover {
+  background: var(--adl-fill-hover-inverse);
+  border-color: var(--adl-border-hover);
+}
+
+/* Membership (same on light and dark in ADL) */
+.membership {
+  background: var(--adl-fill-membership);
+  border-color: var(--adl-fill-membership);
+  color: var(--adl-text-primary-inverse);
+}
+.membership:hover {
+  background: var(--adl-border-membership-hover);
+  border-color: var(--adl-border-membership-hover);
+}
+
+/* Disabled and Loading share the grey fill */
+.inactive,
+.inactive:hover {
+  cursor: default;
+  background: var(--adl-fill-disabled);
+  border-color: var(--adl-fill-disabled);
+  color: var(--adl-text-button-disabled);
+}
+.inactive.onDark,
+.inactive.onDark:hover {
+  background: var(--adl-fill-disabled-inverse);
+  border-color: var(--adl-fill-disabled-inverse);
+  color: var(--adl-text-button-disabled-inverse);
+}
+
+/* Loading: "Loading..." 12/20 regular with a bar that grows under it */
+.loader {
+  position: relative;
+  display: block;
+  width: 53px;
+  height: 23px;
+  font-weight: 400;
+  font-size: 12px;
+  line-height: 20px;
+  white-space: nowrap;
+  color: var(--adl-text-primary);
+}
+.onDark .loader {
+  color: var(--adl-text-primary-inverse);
+}
+.loaderBar {
+  position: absolute;
+  left: 0;
+  top: 22px;
+  height: 1px;
+  width: 1px;
+  background: var(--adl-fill-primary);
+  animation: bar-grow 1s steps(2, jump-none) infinite alternate;
+}
+.onDark .loaderBar {
+  background: var(--adl-fill-primary-inverse);
+}
+@keyframes bar-grow {
+  to {
+    width: 53px;
+  }
+}
+@media (prefers-reduced-motion: reduce) {
+  .loaderBar {
+    animation: none;
+    width: 53px;
+  }
+}

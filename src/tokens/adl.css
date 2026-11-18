@@ -1,0 +1,37 @@
+/*
+ * ADL tokens (adidas Global Library, variable collection "[Design System] Adidas").
+ * Only the roles used by the components built so far. Names follow the Figma variable path:
+ *   fill/color-fill-primary  ->  --adl-fill-primary
+ *   text/color-text-primary  ->  --adl-text-primary
+ * They do NOT change with the Stan Smith / Default theme: ADL components look the same in every theme.
+ */
+:root {
+  /* fill/* */
+  --adl-fill-primary: #000000;
+  --adl-fill-primary-inverse: #ffffff;
+  --adl-fill-secondary: #eceff1;
+  --adl-fill-hover: #f5f5f5;
+  --adl-fill-hover-inverse: #1e1e1e;
+  --adl-fill-disabled: #d9dbdd;
+  --adl-fill-disabled-inverse: #3b3b3c;
+  --adl-fill-membership: #408267;
+
+  /* text/* */
+  --adl-text-primary: #000000;
+  --adl-text-primary-inverse: #ffffff;
+  --adl-text-membership: #408267;
+  --adl-text-button-disabled: rgba(0, 0, 0, 0.3);
+  --adl-text-button-disabled-inverse: rgba(255, 255, 255, 0.3);
+
+  /* border/* */
+  --adl-border-primary: #000000;
+  --adl-border-primary-inverse: #ffffff;
+  --adl-border-hover: #929396;
+  --adl-border-membership-hover: #336853;
+
+  /* spacing */
+  --adl-spacing-2xs: 4px;
+  --adl-spacing-s: 16px;
+  --adl-spacing-icon-to-text: 8px;
+  --adl-borderwidth-fixed-1: 1px;
+}

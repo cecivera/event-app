@@ -1,5 +1,7 @@
 "use client";
 
+import { Button } from "../button";
+import { Tag } from "../tag";
 import styles from "./EarnPoints.module.css";
 
 export type EarnPointsItem = {
@@ -27,7 +29,8 @@ const defaultLabels = { title: "Earn points", scan: "Scan", done: "Done" };
  * List of event activities. Pending items have a SCAN button, completed ones a DONE tag.
  * Figma: Events - Shangai, node 35:65 ("Suma puntos", states Antes / Despues).
  *
- * Note: in Figma this component uses hardcoded colors, so it does not change with the theme.
+ * SCAN is the ADL Button (Secondary) and DONE is the ADL Tag (Membership, bold), so it follows ADL
+ * and does not change with the theme. Figma still draws both by hand: swap them for ADL instances.
  */
 export function EarnPoints({ items, onScan, labels, className }: EarnPointsProps) {
   const l = { ...defaultLabels, ...labels };
@@ -43,16 +46,17 @@ export function EarnPoints({ items, onScan, labels, className }: EarnPointsProps
               <p className={`${styles.points} ss-text-body-s`}>{item.points}</p>
             </div>
             {item.done ? (
-              <span className={`${styles.tag} ${styles.done} ss-text-body-s-bold`}>{l.done}</span>
+              <Tag type="membership" bold>
+                {l.done}
+              </Tag>
             ) : (
-              <button
-                type="button"
-                className={`${styles.tag} ${styles.scan} ss-text-body-s-bold`}
+              <Button
+                variant="secondary"
+                icon={false}
                 onClick={() => onScan?.(item.id)}
-                aria-label={`${l.scan}: ${item.title}`}
               >
                 {l.scan}
-              </button>
+              </Button>
             )}
           </li>
         ))}

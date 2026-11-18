@@ -66,10 +66,8 @@
 }
 
 /*
- * Values that are hardcoded in Figma (not variables yet) and used by EarnPoints.
- * Names are proposals. They do NOT change with the theme, same as the design today.
+ * Value hardcoded in Figma (not a variable yet) and used by EarnPoints. Name is a proposal.
  */
 :root {
   --ss-color-border-subtle: #e0e0e0;
-  --ss-color-status-done: #2e6a3d;
 }

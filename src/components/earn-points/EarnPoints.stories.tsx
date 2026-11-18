@@ -16,7 +16,7 @@ const meta = {
     docs: {
       description: {
         component:
-          "List of event activities. Pending items show a SCAN button, completed ones a DONE tag. In Figma this component uses hardcoded colors, so it does not react to the theme yet.",
+          "List of event activities. Pending items show a SCAN button, completed ones a DONE tag. SCAN is the ADL Button and DONE the ADL Tag.",
       },
     },
   },

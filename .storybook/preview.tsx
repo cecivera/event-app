@@ -1,6 +1,7 @@
 import type { Preview } from "@storybook/nextjs-vite";
 import "../src/tokens/tokens.css";
 import "../src/tokens/typography.css";
+import "../src/tokens/adl.css";
 
 const preview: Preview = {
   initialGlobals: { theme: "stan-smith" },

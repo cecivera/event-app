@@ -56,11 +56,14 @@ A new brand = a new `[data-theme="..."]` block in `tokens.css`.
 | `PointsCard` | node 1:161 | Default, Stan Smith | `progress` and `pointsToNextEntry` are separate props until the entry-conversion rule is confirmed |
 | `EventPass` | node 1:160 | `valid`, `checked-in` | QR is a slot (`qr` prop); placeholder by default |
 | `EventBanner` | node 1:174 | with and without image | CTA renders as a link (`ctaHref`) or a button |
-| `EarnPoints` | node 35:65 ("Suma puntos") | pending, done | Uses hardcoded colors in Figma, so it does not react to the theme yet |
+| `EarnPoints` | node 35:65 ("Suma puntos") | pending, done | Built with the ADL Button (SCAN) and ADL Tag (DONE). Figma still draws both by hand |
+| `Button` (ADL) | adidas Global Library 614:5356 | primary, secondary, membership; enabled, hover, disabled, loading; on dark; full width | Drop shadow and original arrow asset pending |
+| `Tag` (ADL) | adidas Global Library 629:3351 | default, subtle, membership; bold; on dark | World icon pending |
 
 ## Open decisions
 
 - Entry-conversion threshold: how `progress` and `pointsToNextEntry` relate.
 - Singular/plural for "raffle entries" when the value is 1 (copy is overridable via `labels`).
 - Zero and completed-progress behavior, loading and error states.
-- `EarnPoints` colors (`#E0E0E0` row divider, `#2E6A3D` DONE tag) are not Figma variables. Proposed tokens `--ss-color-border-subtle` and `--ss-color-status-done` hold them until they are bound.
+- `EarnPoints` row divider (`#E0E0E0`) is not a Figma variable. Proposed token `--ss-color-border-subtle` holds it until it is bound.
+- ADL tokens live in `src/tokens/adl.css` (`--adl-*`) and do not change with the theme. Font is Barlow because AdihausDIN is proprietary.
