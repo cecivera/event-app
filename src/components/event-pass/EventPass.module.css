@@ -1,0 +1,84 @@
+.pass {
+  box-sizing: border-box;
+  width: 358px;
+  max-width: 100%;
+  display: flex;
+  flex-direction: column;
+  background: var(--ss-color-surface);
+  border: 1px solid var(--ss-color-border-default);
+}
+
+.header {
+  display: flex;
+  flex-direction: column;
+  gap: var(--ss-spacing-xs);
+  padding: var(--ss-padding-md);
+  background: var(--ss-color-accent-deep);
+  color: var(--ss-color-on-accent);
+}
+
+.eventName,
+.guestName {
+  margin: 0;
+}
+
+.qr {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: var(--ss-spacing-sm);
+  padding: var(--ss-padding-lg);
+  background: #fff;
+}
+
+.qrPlaceholder {
+  width: 160px;
+  height: 160px;
+  background: var(--ss-color-surface-muted);
+}
+
+.code {
+  margin: 0;
+  color: var(--ss-color-text-primary);
+}
+
+.rows {
+  display: flex;
+  flex-direction: column;
+  gap: var(--ss-spacing-sm);
+  margin: 0;
+  padding: var(--ss-padding-md);
+  background: #fff;
+}
+
+.row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.rowLabel {
+  margin: 0;
+  color: var(--ss-color-text-secondary);
+}
+
+.rowValue {
+  margin: 0;
+  color: var(--ss-color-text-primary);
+}
+
+.chip {
+  display: inline-flex;
+  padding: var(--ss-spacing-xs) var(--ss-spacing-sm);
+  margin: 0;
+}
+
+.chipValid {
+  background: var(--ss-color-accent-subtle);
+  color: var(--ss-color-text-primary);
+}
+
+.chipCheckedIn {
+  background: var(--ss-color-accent);
+  color: var(--ss-color-on-accent);
+}

@@ -1,33 +1,75 @@
 /*
  * Design tokens for Event App (white-label).
  * Names match the Figma variables (prefix --ss-), so Dev Mode and code speak the same language.
+ * Source: "Foundations / Stan Smith Extended Library" (Events - Shangai).
  *
- * Base tokens are shared by every brand/theme.
- * Only the accent tokens change per theme: set data-theme on any ancestor.
+ * Layers, same as Figma:
+ *   1. Primitives   --ss-green-*, --ss-neutral-*        (never used directly by components)
+ *   2. Theme        --ss-color-accent*, on-accent, ...   (switches with data-theme)
+ *   3. Shared       surface, text, border, spacing       (same in every theme)
+ *
+ * Set data-theme on any ancestor:
  *   <div data-theme="stan-smith"> ... </div>
  *   <div data-theme="default"> ... </div>   (also the fallback when no theme is set)
  */
 
+:root {
+  /* 1. Primitives: Stan Smith greens */
+  --ss-green-950: #062909;
+  --ss-green-900: #0e361b;
+  --ss-green-800: #0a5128;
+  --ss-green-700: #106936;
+  --ss-green-600: #00aa55;
+  --ss-green-500: #03935b;
+  --ss-green-400: #387954;
+  --ss-green-300: #509f90;
+  --ss-green-100: #e3f3ea;
+  --ss-green-50: #f2f9f5;
+
+  /* 1. Primitives: neutrals */
+  --ss-neutral-black: #000000;
+  --ss-neutral-200: #ececec;
+  --ss-neutral-white: #ffffff;
+}
+
 :root,
 [data-theme="default"] {
-  /* Surface and text (shared) */
+  /* 3. Shared (same in every theme) */
+  --ss-color-surface: var(--ss-neutral-white);
   --ss-color-surface-muted: #f5f5e5;
-  --ss-color-text-primary: #000000;
+  --ss-color-text-primary: var(--ss-neutral-black);
   --ss-color-text-secondary: #767677;
   --ss-color-border-default: #cdcdcd;
 
-  /* Spacing (shared) */
   --ss-spacing-xs: 4px;
+  --ss-spacing-sm: 8px;
   --ss-spacing-md: 16px;
   --ss-spacing-xl: 32px;
   --ss-padding-md: 16px;
+  --ss-padding-lg: 24px;
 
-  /* Theme: Default */
-  --ss-color-accent: #000000;
-  --ss-color-accent-strong: #000000;
+  /* 2. Theme: Default */
+  --ss-color-accent: var(--ss-neutral-black);
+  --ss-color-accent-strong: var(--ss-neutral-black);
+  --ss-color-accent-deep: var(--ss-neutral-black);
+  --ss-color-accent-subtle: #f5f5e5;
+  --ss-color-on-accent: var(--ss-neutral-white);
 }
 
 [data-theme="stan-smith"] {
-  --ss-color-accent: #00aa55;
-  --ss-color-accent-strong: #0a5128;
+  /* 2. Theme: Stan Smith */
+  --ss-color-accent: var(--ss-green-600);
+  --ss-color-accent-strong: var(--ss-green-800);
+  --ss-color-accent-deep: var(--ss-green-900);
+  --ss-color-accent-subtle: var(--ss-green-100);
+  --ss-color-on-accent: var(--ss-neutral-white);
+}
+
+/*
+ * Values that are hardcoded in Figma (not variables yet) and used by EarnPoints.
+ * Names are proposals. They do NOT change with the theme, same as the design today.
+ */
+:root {
+  --ss-color-border-subtle: #e0e0e0;
+  --ss-color-status-done: #2e6a3d;
 }
