@@ -1,0 +1,52 @@
+import { Meta, Canvas, Controls } from "@storybook/addon-docs/blocks";
+import * as ButtonIconStories from "./ButtonIcon.stories";
+
+<Meta title="ADL/Button Icon/Docs" of={ButtonIconStories} />
+
+# Button Icon
+
+Icon-only button used for actions where space is limited, like toolbars or utility actions.
+
+- **Supported platforms:** Web, iOS and Android
+- **Location:** adidas Global Library (`[Global] ButtonIcon`, node 27434:2350)
+- **Component guidelines:** Zeroheight
+- **Keywords:** Action, CTA, Icon
+
+## Try it
+
+<Canvas of={ButtonIconStories.Playground} />
+<Controls of={ButtonIconStories.Playground} />
+
+## Sizes and types
+
+Sizes: Large 48px, Medium 40px and Small 32px, always with a 32px icon centered. Types: Primary, Secondary and Ghost. States: Enabled and Hover (native CSS, pass the mouse over the buttons below).
+
+<Canvas of={ButtonIconStories.All} />
+
+## Outerbox
+
+Only Primary Large draws the Outerbox: a 1px outline offset 4px down and right, outside the button.
+
+## Accessibility
+
+The button has no visible text, so `label` is required: it becomes the accessible name.
+
+## As a link
+
+With `href` it renders an `<a>` with the same look.
+
+<Canvas of={ButtonIconStories.AsLink} />
+
+## Usage
+
+```tsx
+import { ButtonIcon } from "@/components/button-icon";
+
+<ButtonIcon label="Next" />
+<ButtonIcon label="Next" variant="secondary" size="medium" />
+<ButtonIcon label="Next" variant="ghost" size="small" />
+```
+
+## Known differences with Figma
+
+- **On dark**: Figma has it, this app does not use it, so it was left out on purpose.
