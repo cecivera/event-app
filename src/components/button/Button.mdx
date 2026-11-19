@@ -1,0 +1,73 @@
+import { Meta, Canvas, Controls } from "@storybook/addon-docs/blocks";
+import * as ButtonStories from "./Button.stories";
+
+<Meta title="ADL/Button/Docs" of={ButtonStories} />
+
+# Button
+
+Interactive element used to trigger screen main actions. Variants define visual hierarchy and contextual emphasis. Optional icon indicates its purpose.
+
+- **Supported platforms:** Web, iOS and Android
+- **Location:** adidas Global Library (`[Global] Button`, node 614:5356)
+- **Component guidelines:** Zeroheight
+- **Keywords:** Action, CTA, Primary, Secondary, Membership
+
+## Try it
+
+<Canvas of={ButtonStories.Playground} />
+<Controls of={ButtonStories.Playground} />
+
+## Types
+
+Each type sets a level of emphasis. Use one Primary per screen.
+
+- **Primary:** the main action of the screen (black).
+- **Secondary:** an alternative or supporting action (outlined).
+- **Membership:** actions tied to the adiClub membership (green).
+
+## States
+
+Enabled, Hover, Disabled and Loading. Hover is native CSS: pass the mouse over the buttons below. Secondary has no Disabled state in ADL, so here it reuses the disabled look. While Loading, the label is replaced by a text loader and the button is not clickable.
+
+<Canvas of={ButtonStories.AllLight} />
+
+## Full width
+
+Stretches to the width of its container. Use it in narrow mobile layouts.
+
+<Canvas of={ButtonStories.FullWidth} />
+
+## As a link
+
+With `href`, it renders an `<a>` instead of a `<button>` and keeps the same look. A disabled or loading button never renders as a link.
+
+<Canvas of={ButtonStories.AsLink} />
+
+## Icon
+
+The trailing 32px arrow is shown by default, as in ADL. Hide it with `icon={false}` only in tight layouts.
+
+## Dimensions and text
+
+Minimum height 48px, minimum width 80px. The label uses body-m bold.
+
+## Usage
+
+```tsx
+import { Button } from "@/components/button";
+
+<Button>Check in</Button>
+<Button variant="secondary">Learn more</Button>
+<Button variant="membership" fullWidth>Join adiClub</Button>
+<Button loading>Saving</Button>
+<Button href="/event">Go to event</Button>
+```
+
+## Outerbox
+
+Primary and Membership draw the Outerbox: a 1px outline offset 4px down and right, outside the button. Secondary, Disabled and Loading do not have it.
+
+## Known differences with Figma
+
+- **Font**: the button uses AdihausDIN Bold like Figma, loaded from `fonts-local/` (git-ignored, the font is proprietary and is not committed to this public repo). Without that folder it falls back to Barlow.
+- **On dark**: Figma has it, this app does not use it, so it was left out on purpose.

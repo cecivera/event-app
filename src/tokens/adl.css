@@ -6,6 +6,9 @@
  * They do NOT change with the Stan Smith / Default theme: ADL components look the same in every theme.
  */
 :root {
+  /* ADL typeface. Not committed (proprietary), falls back to Barlow when missing. */
+  --adl-font-body: "AdihausDIN", var(--ss-font-body);
+
   /* fill/* */
   --adl-fill-primary: #000000;
   --adl-fill-primary-inverse: #ffffff;
@@ -13,7 +16,6 @@
   --adl-fill-hover: #f5f5f5;
   --adl-fill-hover-inverse: #1e1e1e;
   --adl-fill-disabled: #d9dbdd;
-  --adl-fill-disabled-inverse: #3b3b3c;
   --adl-fill-membership: #408267;
 
   /* text/* */
@@ -21,7 +23,6 @@
   --adl-text-primary-inverse: #ffffff;
   --adl-text-membership: #408267;
   --adl-text-button-disabled: rgba(0, 0, 0, 0.3);
-  --adl-text-button-disabled-inverse: rgba(255, 255, 255, 0.3);
 
   /* border/* */
   --adl-border-primary: #000000;
